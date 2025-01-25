@@ -6,12 +6,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 12dvh;
+    height: 9dvh;
     background-color: white;
-    padding: 0px 8dvw 0px 8dvw;
+    padding: 0px 8dvw 0px 
+    8dvw;
 }
 .nav img{
-    height: 40%;
+    will-change: transform;
+    object-fit: cover;
+    max-height: 40%;
 }
 .nav > .hamcontainer{
     width: 50px;
@@ -190,4 +193,54 @@ background-color: #8c090a;
 .page1 > .contactinfo > .othercontact {
     display: flex;
     gap: 10px;
+}
+/* page 2 */
+.page2{
+    margin-top: 70px;
+}
+.page2-heading{
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-align: center;
+    color: #be181c;
+}
+.services-container{
+    margin-top: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+.services-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    max-width:12rem;
+    min-width: 8rem;
+    height: 12rem;
+    flex: 1 1 300px;
+    background: white;
+    -webkit-box-shadow: 0px 0px 55px -8px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 55px -8px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 55px -8px rgba(0,0,0,0.2);
+
+    gap: 20px;
+}
+.upper-section{
+    height: 50%;
+    width: 50%;
+    border-radius: 50%;
+    background: #be181c;
+}
+.upper-section > img{
+    width: 100%;
+    height: 100%;
+}
+.lower-section > h1{
+    font-family: "Poppins", serif;
+
+ font-size:clamp(1.2rem, 2vw, 1.2rem) ;
 }

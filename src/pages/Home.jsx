@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import { useInView } from 'motion/react';
 import "../styles/Home.css"
 import logopng from "../assets/logo.webp"
 import { MdEmail } from "react-icons/md";
@@ -9,6 +10,7 @@ import simpleanimebg from "../assets/singleanimbc.webp"
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FiTwitter } from "react-icons/fi";
 import wave from "../assets/wave.svg"
+import graphiclog from "../assets/graphic-design.webp"
 import { RxHamburgerMenu } from "react-icons/rx";
 import { motion } from 'motion/react';
 const Home = () => {
@@ -17,7 +19,37 @@ const Home = () => {
   const Htext2 = "WITH US"
   const ptext1 = "We Have The Ability To Stay"
   const ptext2 = "Connect With You"
-
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: true });
+ const servicesData = [
+  {
+    images:graphiclog,
+    text:"Graphic Design"
+  },
+  {
+    images:graphiclog,
+    text:"Graphic Design"
+  },
+  {
+    images:graphiclog,
+    text:"Graphic Design"
+  },
+  {
+    images:graphiclog,
+    text:"Graphic Design"
+  },
+ ]
+ const pullupVariant = {
+  initial: { y: 30, opacity: 0 },
+  animate: (i) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: i * 0.3,
+      duration:1,
+    },
+  }),
+};
   return (
     <>
       <nav className='nav'>
@@ -154,6 +186,31 @@ const Home = () => {
 
       </div>
       <img className='page1waveimg' src={wave} alt="" />
+      <div className="page2">
+        <h1 className='page2-heading'>OUR SERVICES</h1>
+        <div ref={ref} className="services-container">
+        {servicesData.map((current, i) => (
+        < motion.div
+          key={i}
+          variants={pullupVariant}
+          initial="initial"
+          animate={isInView ? 'animate' : ''}
+          custom={i}
+        className="services-box">
+        <div className='upper-section'>
+          <img src={current.images} alt="" />
+        </div>
+        <div className="lower-section">
+         <h1>{current.text}</h1> 
+        </div>
+      </motion.div>
+      ))}
+         
+        </div>
+      </div>
+      <div className="page3">
+        
+      </div>
     </>
   )
 }
