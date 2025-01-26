@@ -224,7 +224,7 @@
 
 /* page 2 */
 .page2 {
-    margin-top: 70px;
+    margin-top: 10rem;
 }
 
 .page2-heading {
@@ -281,7 +281,7 @@
 
 /* page3 */
 .page3 {
-    margin-top: 70px;
+    margin-top: 10rem;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -300,7 +300,7 @@
 .text-container>h3 {
     font-family: "Poppins", serif;
     font-weight: 700;
-    color: red;
+    color: #be181c;
     font-size: clamp(1.7rem, 5vw, 3rem);
 }
 
@@ -344,12 +344,15 @@
     width: 20vw;
     max-width: 8rem;
 }
-
+.image-container :nth-child(1){
+    max-width: 6rem;
+    width: 15vw;
+}
 .circel-bg {
     height: 14rem;
     width: 14rem;
     position: absolute;
-    animation: borderRadiusAnimation 5s infinite ease-in-out;
+    animation: borderRadiusAnimation 3s infinite ease-in-out;
     background-color: #fe7477;
     border-radius: 50%;
 }
@@ -411,7 +414,61 @@
         height: 9rem;
         width: 9rem;
         position: absolute;
-        background-color: pink;
         border-radius: 50%;
     }
+}
+
+/* page5 */
+.page5{
+    margin-top: 10rem;
+}
+.page5-text-container{
+    text-align: center;
+}
+.page5-text-container :nth-child(1){
+    font-family: "Poppins", serif;
+    font-weight: 100;
+    color: black;
+    font-size: clamp(1.5rem, 4vw, 2.7rem);
+}
+.page5-text-container :nth-child(2){
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    color:#be181c;
+    font-size: clamp(1.7rem, 5vw, 3rem);
+
+}
+.page5-review-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.page5-review-container > .container-reviews{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    justify-self: center;
+    flex-wrap: wrap;
+}
+.page5-review-container > .container-reviews > .reviews-container{
+text-align: center;
+flex: 1 1 200px;
+}
+.page5-review-container > .container-reviews > .client-numbers {
+    text-align: center;
+    flex: 1 1 200px;
+ 
+}
+.page5-review-container > .container-reviews > .client-numbers > h3{
+    font-family: "Poppins", serif;
+    font-weight: 700;
+    color:black;
+    font-size: clamp(2.5rem, 5vw, 3rem);
+}
+.page5-review-container > .container-reviews > .client-numbers > p{
+    font-family: "Poppins", serif;
+    color: #747474;
+    margin-top: -8px;
+    font-size: clamp(0.7vw, 3.5vw, 1.3rem);
 }

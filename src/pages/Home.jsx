@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import { useInView } from 'motion/react';
 import "../styles/Home.css"
 import logopng from "../assets/logo.webp"
@@ -9,12 +9,14 @@ import bottomrightmg from "../assets/bottomrightmg.webp"
 import simpleanimebg from "../assets/singleanimbc.webp"
 import { AiOutlineInstagram } from "react-icons/ai";
 import { FiTwitter } from "react-icons/fi";
+import { FaThumbsUp } from "react-icons/fa6";
+import { RiStarSFill } from "react-icons/ri";
 import wave from "../assets/wave.svg"
 import bulb from "../assets/bulb.webp"
 import bulb2 from "../assets/bulb 2.webp"
 import graphiclog from "../assets/graphic-design.webp"
 import { RxHamburgerMenu } from "react-icons/rx";
-import { motion } from 'motion/react';
+import {useMotionValue, motion, animate} from 'motion/react';
 const Home = () => {
   const [loopAnimation, setLoopAnimation] = useState(false);
   const Htext1 = "CONNECT YOURSELF"
@@ -22,7 +24,26 @@ const Home = () => {
   const ptext1 = "We Have The Ability To Stay"
   const ptext2 = "Connect With You"
   const ref = React.useRef(null);
+  const refstars = React.useRef(null);
+  const refnumber = React.useRef(null);
+  const count = useMotionValue(0)
+  const isnumbersInView = useInView(refnumber, { once: true });
+
+  useEffect(() => {
+    if (isnumbersInView) {
+      const controls = animate(count, 150, { 
+        duration: 5, 
+        onUpdate: latest => {
+          count.set(Math.floor(latest));
+        }
+      });
+      return () => controls.stop(); 
+    }
+  }, [isnumbersInView, count]);
+
+  const isStarsInView = useInView(refstars, { once: true })
   const isInView = useInView(ref, { once: true });
+
   const servicesData = [
     {
       images: graphiclog,
@@ -40,6 +61,13 @@ const Home = () => {
       images: graphiclog,
       text: "Graphic Design"
     },
+  ]
+  const stars = [
+    <RiStarSFill size={30} />,
+            <RiStarSFill size={30} />,
+            <RiStarSFill size={30} />,
+            <RiStarSFill size={30} />,
+            <RiStarSFill size={30} />,
   ]
   const pullupVariant = {
     initial: { y: 30, opacity: 0 },
@@ -188,6 +216,34 @@ const Home = () => {
 
       </div>
       <img className='page1waveimg' src={wave} alt="" />
+      <div className="margin">
+        <div className="page3">
+          <div className="image-container">
+            <div className="image-container2">
+              <img className='puzlimg' src={bulb2} alt="" />
+              <img src={bulb} className="bulbimg" /></div>
+            <div className='circel-bg'>
+
+            </div>
+
+          </div>
+          <div className="text-container">
+            <h3>Hub IT Creative
+              Agency</h3>
+            <p>
+              We achieved many victories and gained great
+              appreciations from our clients. We are
+              specialized in Graphic Design, branding (to
+              make your business on high level) , social media,
+              design and development, production, event
+              management, marketing and advertising. We
+              are here to give rise to your Business and take it
+              to a high level
+            </p>
+          </div>
+
+        </div>
+      </div>
       <div className="page2">
         <h1 className='page2-heading'>OUR SERVICES</h1>
         <div ref={ref} className="services-container">
@@ -210,34 +266,48 @@ const Home = () => {
 
         </div>
       </div>
+      <div className="page5">
       <div className="margin">
-      <div className="page3">
-      <div className="image-container">
-        <div className="image-container2">
-          <img className='puzlimg' src={bulb2} alt="" />
-        <img src={bulb} className="bulbimg" /></div>
-        <div className='circel-bg'>
+        <div className="page5-text-container">
+          <h1>We Love</h1>
+          <h1>Our Clints</h1>
+        </div>
+        <div className="page5-review-container">
+         <div className="container-reviews">
+          <div className="reviews-container">
+            <div className="thumb">
+            < motion.span
+              key={2}
+              variants={pullupVariant}
+              initial="initial"
+              animate={isStarsInView ? 'animate' : ''}>
+              {<FaThumbsUp  className='thumsup' size={40} color='red' />}
+            </motion.span>
+            </div>
+            <div ref={refstars} className="stars">
+            {stars.map((current, i) => (
+            < motion.span
+              key={i}
+              variants={pullupVariant}
+              initial="initial"
+              animate={isStarsInView ? 'animate' : ''}
+              custom={i}>
+              {current}
+            </motion.span>
+          ))}
+            
 
-</div>
-      
-      </div>
-        <div className="text-container">
-          <h3>Hub IT Creative
-            Agency</h3>
-          <p>
-            We achieved many victories and gained great
-            appreciations from our clients. We are
-            specialized in Graphic Design, branding (to
-            make your business on high level) , social media,
-            design and development, production, event
-            management, marketing and advertising. We
-            are here to give rise to your Business and take it
-            to a high level
-          </p>
-        </div>
-       
+            </div>
+          </div>
+          <div ref={refnumber} className="client-numbers">
+            <h3><motion.span>{count}</motion.span>+</h3>
+            <p>Satisfied Clients</p>
+          </div>
+         </div>
         </div>
       </div>
+      </div>
+    <div style={{height:"100vh"}}></div>
     </>
   )
 }
