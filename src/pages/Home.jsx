@@ -3,10 +3,10 @@ import { useInView } from 'motion/react';
 import "../styles/Home.css"
 
 import { MdEmail } from "react-icons/md";
-import chapalBuilders from "../assets/reviews images/Chapal-Builders-Dp.png"
+import chapalBuilders from "../assets/reviews images/Chapal-Builders-DP.png"
 import CleanMatic from "../assets/reviews images/Clean-Matic-DP.png"
-import FaizanSteel from "../assets/reviews images/Faizan-Steel-Dp.jpg"
-import PacificCooking from "../assets/reviews images/Pacific-Cooking-Oil-Dp.png"
+import FaizanSteel from "../assets/reviews images/Faizan-Steel-DP.jpg"
+import PacificCooking from "../assets/reviews images/Pacific-Cooking-Oil-DP.png"
 import UMDCimg from "../assets/reviews images/UMDC-DP.png"
 import UnitedHospital from "../assets/reviews images/United-Hospital-DP.png"
 import { FaFacebook } from "react-icons/fa6";
