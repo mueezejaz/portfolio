@@ -8,7 +8,9 @@
     height: 80dvh;
     background-color: #be181c;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .page1waveimg {
     width: auto;
     position: relative;
@@ -68,9 +70,19 @@
     margin-top: 10px;
     font-size: clamp(0.2vw, 3.4vw, 1.3rem);
 }
-
-.page1>.maincontaint>button {
-    margin-top: 50px;
+.btncontainer{
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .btncontainer{
+    flex-direction: column;
+  }
+}
+.page1>.maincontaint>.btncontainer>.btn1 {
+    text-decoration: none;
     font-size: clamp(0.9rem, 2.5vw, 1.2rem);
     font-weight: 400;
     height: clamp(2rem, 5vw, 3rem);
@@ -84,8 +96,33 @@
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
-.page1>.maincontaint>button:hover {
+.page1>.maincontaint>.btncontainer>.btn2 {
+    
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(2rem, 5vw, 3rem);
+  width: clamp(8rem, 20vw, 12rem);
+  color: white;
+  text-align: center;
+  border-radius: 30px;
+  border: 2px solid white;
+  background-color: #be181c;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn2 > a {
+  text-decoration: none;
+  color: white;
+}
+.btn1 > a {
+  text-decoration: none;
+  color: #be181c;
+}
+.page1>.maincontaint>.btncontainer>button:hover {
     color: white;
     background-color: darkred;
     transform: scale(1.05);
@@ -117,14 +154,12 @@
 }
 
 .page1>.contactinfo>.gmail {
-    font-family: "Poppins", sans-serif;
-    color: white;
-    display: flex;
-    gap: 2px;
-    justify-content: center;
-    align-items: center;
+ width: 80px;
 }
-
+.page1>.contactinfo>.gmail > img{
+  width: 100%;
+  height: 100%;
+}
 .page1>.contactinfo>.gmail>p {
     font-size: clamp(0.6rem, 1vw, 1rem);
 }
@@ -138,6 +173,9 @@
 
 .page1>.contactinfo>.othercontact {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     gap: 10px;
 }
 
@@ -509,7 +547,7 @@
   }
   ::selection{
     color: #ffffff;
-    background-color: #252525;
+    background-color: red;
   }
   .counter-container{
     position: relative;
@@ -621,10 +659,6 @@
   .pricing-card * {
     position: relative;
     z-index: 1;
-  }
-  
-  .highlighted {
-    border: 2px solid red;
   }
   
   .pricing-title {

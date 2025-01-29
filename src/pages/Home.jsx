@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useInView } from 'motion/react';
 import "../styles/Home.css"
-import logopng from "../assets/logo.webp"
+
 import { MdEmail } from "react-icons/md";
 import chapalBuilders from "../assets/reviews images/Chapal-Builders-Dp.png"
 import CleanMatic from "../assets/reviews images/Clean-Matic-DP.png"
@@ -12,18 +12,13 @@ import UnitedHospital from "../assets/reviews images/United-Hospital-DP.png"
 import { FaFacebook } from "react-icons/fa6";
 import toprightmg from "../assets/topleftmg.webp"
 import bottomrightmg from "../assets/bottomrightmg.webp"
-import simpleanimebg from "../assets/singleanimbc.webp"
 import { AiOutlineInstagram } from "react-icons/ai";
-import { FiTwitter } from "react-icons/fi";
-import { FaThumbsUp } from "react-icons/fa6";
 import { RiStarSFill } from "react-icons/ri";
+import logo from "../assets/white hubit logo.webp"
 import { TbBrandWhatsappFilled } from "react-icons/tb";
-import profile from "../assets/profile.png"
 import wave from "../assets/wave.svg"
 import bulb from "../assets/bulb.webp"
 import bulb2 from "../assets/bulb 2.webp"
-import graphiclog from "../assets/graphic-design.webp"
-import { RxHamburgerMenu } from "react-icons/rx";
 import { useMotionValue, motion, animate } from 'motion/react';
 const Home = () => {
   const [loopAnimation, setLoopAnimation] = useState(false);
@@ -270,8 +265,8 @@ const Home = () => {
       <div className='page1'>
 
         <div className='contactinfo'>
-          <div className='gmail'><MdEmail size={20} color='white' /><p>hubitservices@gmail.com</p></div>
-          <div className='othercontact'><FaFacebook color='white' size={25} /><AiOutlineInstagram color='white' size={25} /><FiTwitter color='white' size={25} /></div>
+          <div className='gmail'><img src={logo} alt="" /></div>
+          <div className='othercontact'><span><a href="https://www.facebook.com/profile.php?id=100089780566681"><FaFacebook color='white' size={22} /></a></span>|<span><a href="https://www.instagram.com/hub._it?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><AiOutlineInstagram color='white' size={22} /></a></span>|<span><a href="https://wa.me/+923268007094"><TbBrandWhatsappFilled color='white' size={22} /></a></span></div>
         </div>
         <div className="line"></div>
         <div className="maincontaint">
@@ -325,7 +320,9 @@ const Home = () => {
               </motion.span>
             ))}
           </p>
+          <div className='btncontainer'>
           <motion.button
+          className='btn1'
             initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -333,7 +330,19 @@ const Home = () => {
               duration: 0.3,
               delay: 3,
             }}
-          >LEARN MORE</motion.button>
+          ><a href="https://www.behance.net/4daa6af6">Portfolio</a></motion.button>
+          <motion.button
+          className='btn2'
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              ease: "easeIn",
+              duration: 0.3,
+              delay: 3.5,
+            }}
+          ><a href="#services">Services</a></motion.button>
+          </div>
+          
         </div>
         <motion.img
           initial={{ top: "-50%", left: "-50%" }}
@@ -447,7 +456,7 @@ const Home = () => {
     </div>
       </div>
       
-      <div className="page2">
+      <section className="page2" id='services'>
         <h1 className='page2-heading'>OUR SERVICES</h1>
         <p>Over a decade of expertise, we craft tailored
         digital solutions to  bring your vision to life.</p>
@@ -471,7 +480,7 @@ const Home = () => {
           ))}
 
         </div>
-      </div>
+      </section>
       
       <div className="page5-reviews">
         <div className="margin">
@@ -605,7 +614,7 @@ const Home = () => {
       <h4>Copyright © 2024 | All Rights Reserved</h4>
      </div>
      <a href="https://wa.me/+923268007094" target="_blank" class="whatsapp-button">
-     <TbBrandWhatsappFilled color='white' size={25} />
+     <TbBrandWhatsappFilled color='white' size={30} />
 </a>
     </>
   )
