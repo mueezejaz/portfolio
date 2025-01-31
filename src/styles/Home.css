@@ -8,6 +8,70 @@
     height: 80dvh;
     background-color: #be181c;
 }
+
+@keyframes moveCircle {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(3vw, 3vh);
+  }
+  100% {
+    transform: translate(-3vw, -3vh);
+  }
+}
+
+@keyframes moveTriangle {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(7vh) rotate(10deg);
+  }
+  100% {
+    transform: translateY(-2vh) rotate(-5deg);
+  }
+}
+
+.page1 {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 80vh;
+  background-color: #be181c;
+}
+
+.page1::after {
+  width: clamp(5rem, 10vw, 10rem);
+  content: "";
+  border-radius: 50%;
+  z-index: 1;
+  height: clamp(5rem, 10vw, 10rem);
+  position: absolute;
+  border: clamp(2rem, 5vw, 3rem) solid pink;
+  opacity: 0.2;
+  top: 10%;
+  right: 10%;
+  animation: moveCircle 10s infinite ease-in-out alternate;
+}
+
+.page1::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: clamp(5rem, 7vw, 7rem) solid transparent;
+  border-right: clamp(5rem, 7vw, 7rem) solid transparent;
+  border-bottom: clamp(8rem, 12vw, 12rem) solid pink;
+  opacity: 0.2;
+  top: 50%;
+  left: 50%;
+ rotate: 40deg;animation: moveTriangle 7s infinite ease-in-out alternate;
+}
+
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -20,11 +84,13 @@ html {
 
 .mainheadingmagnet {
     position: absolute;
+    z-index: 2;
     height: 100%;
     rotate: 90deg;
 }
 
 .mainheadingmagnet2 {
+  z-index: 2;
     position: absolute;
     height: 100%;
     rotate: 270deg;
@@ -45,7 +111,7 @@ html {
 
 .page1>.maincontaint {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     flex-direction: column;
     margin: 0px 8dvw 0px 8dvw;
@@ -132,7 +198,7 @@ html {
 
     display: flex;
     position: relative;
-    z-index: 2;
+    z-index: 4;
     margin: 0px 8dvw 0px 8dvw;
     justify-content: space-between;
     align-items: center;
@@ -142,6 +208,7 @@ html {
 .topleftmg {
     width: clamp(35rem, 20vw, 50rem);
     position: absolute;
+    z-index: 2;
     top: 0;
     left: 0;
 }
@@ -149,6 +216,7 @@ html {
 .bottomrightmg {
     width: clamp(12rem, 20vw, 50rem);
     position: absolute;
+    z-index: 2;
     bottom: 0;
     right: 0;
 }
@@ -166,7 +234,7 @@ html {
 
 .page1>.line {
     position: relative;
-    z-index: 2;
+    z-index: 4;
     height: 2px;
     background-color: #8c090a;
 }
