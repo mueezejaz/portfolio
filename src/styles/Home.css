@@ -621,7 +621,7 @@ html {
     position: relative;
     z-index: -2;
     margin-top: 10rem;
-    background-image: url("https://eyeshape.net/wp-content/uploads/2023/09/workspace.jpg");
+    background-image: url("https://img.freepik.com/free-photo/handshake_1098-17050.jpg?t=st=1738405027~exp=1738408627~hmac=33f788f96539a808e10b054ed0c3a7e9424837bb7dd93aadc55bc95527158ae0&w=1380");
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
@@ -731,7 +731,7 @@ html {
   
   .pricing-title {
     font-size: 1.8rem;
-    font-weight: 700;
+    font-weight: 300;
     margin-bottom: 10px;
     color: white;
   }
@@ -740,6 +740,7 @@ html {
     font-size: 3.2rem;
     color: white;
     margin: 10px 0;
+    font-weight: 700;
   }
   
   .pricing-duration {
@@ -773,13 +774,12 @@ html {
   
   .pricing-button {
     display: inline-block;
-    background: #ff6f61;
-    color: white;
+    background: white;
+    color: #be181c;
     padding: 15px 30px;
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    text-transform: uppercase;
     font-size: 1.1rem;
     font-weight: bold;
     transition: background 0.3s, transform 0.3s;
