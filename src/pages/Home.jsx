@@ -604,7 +604,7 @@ const Home = () => {
                 {note}
               </p>
             ))}
-            <button className="pricing-button">{plan.buttonText}</button>
+            <button className="pricing-button"><a style={{textDecoration:"none",color:"#be181c"}} href="https://wa.me/+923268007094">{plan.buttonText}</a></button>
           </motion.div>
         ))}
       </div>

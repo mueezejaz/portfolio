@@ -621,7 +621,7 @@ html {
     position: relative;
     z-index: -2;
     margin-top: 10rem;
-    background-image: url("https://img.freepik.com/free-photo/handshake_1098-17050.jpg?t=st=1738405027~exp=1738408627~hmac=33f788f96539a808e10b054ed0c3a7e9424837bb7dd93aadc55bc95527158ae0&w=1380");
+    background-image: url("../assets/hand-shake.jpg");
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
