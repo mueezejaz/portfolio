@@ -554,7 +554,7 @@ const Home = () => {
             <div className="counter-container2">
               <div className="counters">
               <h3><motion.span>{count}</motion.span>+</h3>
-                <p>Setisfied Clients</p>
+                <p>satisfied Clients</p>
               </div>
               <div className="counters">
                 <h3><motion.span>{count2}</motion.span>+</h3>
